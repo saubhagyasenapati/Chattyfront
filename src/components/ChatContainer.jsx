@@ -140,11 +140,12 @@ overflow:hidden ;
   flex-direction:column ;
   gap:1rem;
   overflow:auto;
-  &::webkit-scrollbar{
+  &::-webkit-scrollbar{
     width:0.2rem;
     border-radius:1rem ;
 
   }
+
   .message{
     display:flex ;
     align-items:center ;

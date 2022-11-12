@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import logo from "../assets/logo.svg";
-export default function Contacts({ contacts, currentUser,changeChat }) {
+export default function Contacts({ contacts, currentUser,changeChat,Button}) {
   const [currentUserName, setCurrentUserName] = useState(undefined);
   const [currentUserImage, setCurrentUserImage] = useState(undefined);
   const [currentSelected, setCurrentSelected] = useState(undefined);
@@ -22,8 +22,10 @@ export default function Contacts({ contacts, currentUser,changeChat }) {
           <div className="brand">
             <img src={logo} alt="LOGO" className="logoimage" />
             <h3>Chatty</h3>
+            <button onClick={Button} className="refresh">Load Contacts</button>
           </div>
           <div className="contacts">
+
             {contacts.map((contact, index) => {
               return (
                 <div
@@ -71,13 +73,33 @@ display:grid ;
 grid-template-rows:10% 75% 15% ;
 overflow:hidden;
 background-color:#080420 ;
+border-top-left-radius:2rem ;
+border-bottom-left-radius:2rem ;
+padding:1rem ;
 
  .brand{
   display:flex ;
   align-items:center;
   gap:1rem;
+  font-size:1.5rem ;
+  .refresh{
+    background-color:#997af0 ;
+    justify-content:end ;
+        font-size:0.7rem ;
+        color:white ;
+        padding:0.5rem 1rem ;
+        border:none;
+        font-weight:bold ;
+        cursor: pointer;
+        border-radius:0.5rem ;
+        text-transform:uppercase ;
+        transition:0.3s ease-in-out ;
+        &:hover{
+            background-color:#4e0eff ;
+        }
+  }
   .logoimage{
-    height:2rem ;
+    height:2.5rem ;
   }
   h3{
     color:white;
@@ -130,6 +152,8 @@ background-color:#080420 ;
   display:flex ;
   justify-content:center ;
   align-items:center ;
+  border-radius:1rem ;
+  margin-top:1rem ;
   .avatar{ 
     img{
       height:5rem ;

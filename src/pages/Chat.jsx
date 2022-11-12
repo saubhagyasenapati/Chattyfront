@@ -7,6 +7,7 @@ import Contacts from "../components/Contacts";
 import Welcome from "../components/Welcome";
 import ChatContainer from "../components/ChatContainer";
 import { io } from "socket.io-client";
+import Logout from "../components/Logout";
 
 function Chat() {
   const socket = useRef();
@@ -32,12 +33,13 @@ function Chat() {
       socket.current.emit("add-user", currentUser._id);
     }
   }, [currentUser]);
+
   useEffect(() => {
     const Getinfo = async () => {
       if (localStorage.getItem("chat-app-user")) {
         setCurrentUser(await JSON.parse(localStorage.getItem("chat-app-user")));
-
         setIsLoaded(true);
+        
       }
       else{
         navigate("login");
@@ -64,12 +66,13 @@ function Chat() {
         navigate("/login")
       ) : (
         <Container>
-          <button onClick={handleRefresh} className="refresh">Refresh</button>
+          <Logout />
           <div className="container">
             <Contacts
               contacts={contacts}
               currentUser={currentUser}
               changeChat={handleChatChange}
+              Button={handleRefresh} 
             />
             {isLoaded && currentChat === undefined ? (
               <Welcome currentUser={currentUser} />
@@ -98,27 +101,14 @@ const Container = styled.div`
   gap: 1rem;
   align-items: center;
   background-color: #131324;
-  .refresh{
-    background-color:#997af0 ;
-        color:white ;
-        padding:1rem 2rem ;
-        border:none;
-        font-weight:bold ;
-        cursor: pointer;
-        border-radius:0.5rem ;
-        text-transform:uppercase ;
-        transition:0.3s ease-in-out ;
-        &:hover{
-            background-color:#4e0eff ;
-           
-        }
-  }
   .container {
     height: 85vh;
     width: 85vw;
+    border-radius:2rem ;
     background-color: #00000076;
     display: grid;
     grid-template-columns: 25% 75%;
+  
     @media screen and (min-width: 720px) and (max-width: 1080px) {
       grid-template-columns: 35% 65%;
     }
