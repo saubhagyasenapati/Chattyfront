@@ -79,7 +79,6 @@ export default function ChatContainer({ currentChat,currentUser,socket}) {
                 <h3>{currentChat.username}</h3>
               </div>
             </div>
-            <Logout/>
           </div>
           <div className="chat-messages">
              {
@@ -118,6 +117,7 @@ overflow:hidden ;
     justify-content:space-between ;
     align-items:center ;
     padding:0.5rem;
+    
     .user-detail{
         display:flex ;
         align-items:center ;

@@ -1,7 +1,7 @@
-import React,{useState,useEffect} from 'react'
+import React,{useState} from 'react'
 import { Link,useNavigate } from 'react-router-dom';
 import styled from "styled-components"
-import Logo from "../assets/logo.svg"
+import Logo from "../assets/logo.png"
 import {ToastContainer,toast} from 'react-toastify'
 import "react-toastify/dist/ReactToastify.css"
 import axios from "axios";
@@ -20,7 +20,7 @@ function Register() {
         console.log("in validation",registerRoute);
         if(handleValidation()){
             
-            const {password,confirmpassword,username,email}=values;
+            const {password,username,email}=values;
             const {data} =await axios.post(registerRoute,{
                 username,
                 email,
@@ -72,11 +72,13 @@ function Register() {
   return (
     <>
     <FormContainer>
+      
         <form onSubmit={(event)=>handleSubmit(event)}>
          <div className='brand'>
             <img src={Logo} alt="" />
              <h1>Chatty</h1>
          </div>
+         <h1>Register</h1>
         <input type="text" placeholder='Username' name="username" onChange={(e)=>handleChange(e)} />
         <input type="email" placeholder='Email' name="email" onChange={(e)=>handleChange(e)} />
         <input type="password" placeholder='Password' name="password" onChange={(e)=>handleChange(e)} />
@@ -98,6 +100,10 @@ justify-content:center ;
 gap:1rem;
 align-items:center ;
 background-color:#131324 ;
+h1{
+    color:white;
+    text-align:center ;
+}
 .brand{
     display:flex ;
     align-items:center ;
@@ -108,13 +114,13 @@ background-color:#131324 ;
     }
     h1{
         color:white;
-        text-transform:uppercase ;
+        font-size:2.5rem ;
     }
 }
 form{
     display:flex ;
     flex-direction:column ;
-    gap:2rem;
+    gap:1.5rem;
     background-color:#00000076 ;
     border-radius:2rem ;
     padding:3rem 5rem ;

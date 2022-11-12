@@ -49,6 +49,7 @@ align-items:center ;
 background-color:#080420 ;
 padding:0 2rem ;
 padding-bottom:0.3rem ;
+border-bottom-right-radius:2rem ;
 .button-container{
     display:flex ;
     align-items:center ;
@@ -93,7 +94,7 @@ padding-bottom:0.3rem ;
       }
     }
     button{
-        padding:0.3rem 2rem ;
+        padding: 0.5rem 2rem;
         border-radius:2rem ;
         align-items:center ;
         background-color:#9a86f3 ;

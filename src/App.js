@@ -4,9 +4,11 @@ import Login from './pages/Login'
 import Register from './pages/Register'
 import Chat from './pages/Chat'
 import SetAvatar from './pages/SetAvatar'
+import Navbar from './pages/Navbar'
 export default function App() {
   return (
     <BrowserRouter>
+    <Navbar/>
     <Routes>
       <Route path="/register" element={<Register/>}/>
       <Route path="/login" element={<Login/>}/>

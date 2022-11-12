@@ -13,7 +13,8 @@ export default function Welcome({currentUser}) {
       <img src={robo} alt="Robot" />
 
       <h1>Welcome      <span>{currentUser.username}!</span> </h1>
-      <h3>Please select a chat to start Messaging</h3>
+      <h3>Please Click on Load Contacts to load the latest contacts on Server and</h3>
+      <h3> select a chat to start Messaging</h3>
     </Container>
   )
 }

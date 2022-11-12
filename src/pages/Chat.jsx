@@ -7,7 +7,7 @@ import Contacts from "../components/Contacts";
 import Welcome from "../components/Welcome";
 import ChatContainer from "../components/ChatContainer";
 import { io } from "socket.io-client";
-import Logout from "../components/Logout";
+
 
 function Chat() {
   const socket = useRef();
@@ -66,7 +66,7 @@ function Chat() {
         navigate("/login")
       ) : (
         <Container>
-          <Logout />
+        
           <div className="container">
             <Contacts
               contacts={contacts}
@@ -101,14 +101,16 @@ const Container = styled.div`
   gap: 1rem;
   align-items: center;
   background-color: #131324;
+
   .container {
     height: 85vh;
-    width: 85vw;
+    width: 90vw;
     border-radius:2rem ;
+    margin-top:4rem ;
     background-color: #00000076;
     display: grid;
     grid-template-columns: 25% 75%;
-  
+    
     @media screen and (min-width: 720px) and (max-width: 1080px) {
       grid-template-columns: 35% 65%;
     }
