@@ -28,17 +28,31 @@ margin-top:1rem ;
 background-color: #668cff;
 padding:0.5rem ;
 border-bottom-right-radius:2rem ;
-border-top-left-radius:2rem ;
 position:absolute ;
-left:40% ;
 ul{
  .nav-link{
   margin:1rem ;
   font-size:1.3rem ;
+  font-weight:600 ;
   color:white;
   text-decoration:none ;
   cursor: pointer;
+  :hover{
+    color:#001f33;
+    transition:0.2s ease-in-out ;
+  }
  }
  
+}
+@media only screen and (max-device-width:1080px){
+  margin-top:0.5rem ;
+  padding:0.4rem ;
+  ul{
+    .nav-link{
+  margin:0.5rem ;
+  font-size:1rem ;
+  font-weight:500 ;
+  }
+}
 }
 `

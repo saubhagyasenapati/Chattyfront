@@ -106,4 +106,43 @@ border-bottom-right-radius:2rem ;
     }
 
 }
+@media only screen and (max-device-width:1080px)
+{
+    
+grid-template-columns:10% 90% ;
+padding:0 1rem ;
+padding-bottom:0.3rem ;
+.button-container{
+   
+    gap:0.5rem;
+    .emoji{
+        svg{
+            font-size:1rem ;
+        }
+        .emoji-picker-react{
+         top:-220px;
+         height:200px ;
+         width:200px ;
+        }
+    }
+}
+.input-container{ 
+    width:100%;
+    gap:1rem;
+    
+    input{
+      width:70%;
+      /* height :60% ; */
+      padding-left:1rem ;
+      font-size:0.8rem ;
+    }
+    button{
+        padding: 0.5rem 1rem;
+        svg{
+            font-size:0.8rem ;
+        }
+    }
+  
+}
+}
 `;

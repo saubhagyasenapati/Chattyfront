@@ -11,10 +11,11 @@ export default function Welcome({currentUser}) {
     return (
     <Container>
       <img src={robo} alt="Robot" />
-
       <h1>Welcome      <span>{currentUser.username}!</span> </h1>
       <h3>Please Click on Load Contacts to load the latest contacts on Server and</h3>
       <h3> select a chat to start Messaging</h3>
+     
+      
     </Container>
   )
 }
@@ -25,8 +26,19 @@ justify-content:center ;
 align-items:center ;
 flex-direction:column ;
 color:white ;
-
 span{
     color:#4e00ff
+}
+@media  screen and (max-device-width: 1080px){
+  img{
+    width:40% ;
+    height:40% ;
+  }
+  h1{
+    font-size:1.5rem ;
+  }
+  h3{
+    font-size:1rem ;
+  }
 }
 `

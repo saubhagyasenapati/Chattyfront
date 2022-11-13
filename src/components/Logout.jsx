@@ -31,4 +31,10 @@ cursor: pointer;
 svg{
     font-size:1.3rem ;
 }
+@media only screen and (max-device-width:1080px)
+{padding:0.3rem ;
+  svg{
+    font-size:1rem ;
+}
+}
 `

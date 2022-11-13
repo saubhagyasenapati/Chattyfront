@@ -109,7 +109,6 @@ const Container = styled.div`
     }
     h3 {
       color: white;
-      
     }
   }
 
@@ -172,5 +171,68 @@ const Container = styled.div`
         color: white;
       }
     }
+  }
+  @media screen and (max-device-width: 1080px) {
+    grid-template-rows: 10% 75% 15%;
+    .brand {
+      gap: 0.3rem;
+      font-size: 0.6rem;
+      margin-left: 0rem;
+      .refresh {
+        position: relative;
+        left: 0px;
+        font-size: 0.3rem;
+        padding: 0.2rem 0.2rem;
+      }
+      .logoimage {
+        height: 1.2rem;
+      }
+    }
+    .contacts {
+      gap: 0.5rem;
+      &::-webkit-scrollbar {
+        width: 0.1rem;
+        &-thumb {
+          background-color: #ffffff39;
+          width: 0.1rem;
+          border-radius: 1rem;
+        }
+      }
+      .contact {
+        min-height: 2rem;
+        width: 80%;
+        cursor: pointer;
+        border-radius: 0.5rem;
+        padding: 0.4rem;
+        gap: 0.3rem;
+
+        .avatar {
+          img {
+            height: 1rem;
+          }
+        }
+        .username {
+          h3 {
+            font-size: 0.5rem;
+          }
+        }
+      }
+    }
+    .current-user {
+    border-radius: 1rem;
+    margin-top: 0.5rem;
+    .avatar {
+      img {
+        height: 2rem;
+        max-inline-size: 100%;
+      }
+    }
+    .username {
+      margin-left: 0.5rem;
+      h2 {
+        font-size:1rem ;
+      }
+    }
+  }
   }
 `;

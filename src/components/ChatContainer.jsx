@@ -109,9 +109,7 @@ display:grid ;
 grid-template-rows:10% 78% 12% ;
 gap:0.1rem;
 overflow:hidden ;
-@media screen and (min-width:720px)and(max-width:1080px){
-  grid-auto-rows:15% 70% 15%;
-}
+
 .chat-header{
     display:flex ;
     justify-content:space-between ;
@@ -171,5 +169,36 @@ overflow:hidden ;
     }
   }
 }
-
+@media only screen and (max-device-width:1080px)
+{
+  grid-template-rows:10% 75% 15%;
+  .chat-header{
+    padding:0.5rem ;
+    .user-detail{
+        gap:0.5rem;
+        .avatar{
+           img{
+            height:1.7rem ;
+           } 
+        }
+        .username{ 
+            h3{
+                font-size:0.9rem ;
+            }   
+        }
+    }
+  }
+  .chat-messages{
+  padding:0.5rem 0.8rem ;
+  gap:0.5rem;
+  .message{
+    .content{
+      max-width:40% ;
+    
+      padding:0.5rem;
+      font-size:0.7rem ;
+    }
+  }
+}
+}
 `;
