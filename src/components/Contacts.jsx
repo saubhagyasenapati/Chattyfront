@@ -26,11 +26,16 @@ export default function Contacts({
       {currentUserImage && currentUserName && (
         <Container>
           <div className="brand">
+            <div className="logo">
             <img src={logo} alt="LOGO" className="logoimage" />
             <h3>Chatty</h3>
+            </div>
+            <div className="load">
             <button onClick={Button} className="refresh">
               Load Contacts
             </button>
+            </div>
+           
           </div>
           <div className="contacts">
             {contacts.map((contact, index) => {
@@ -80,13 +85,23 @@ const Container = styled.div`
   border-top-left-radius: 2rem;
   border-bottom-left-radius: 2rem;
   padding: 1rem;
-
+ box-sizing:content-box ;
   .brand {
     display: flex;
     align-items: center;
+    justify-content:space-around ;
     gap: 1rem;
     font-size: 1.5rem;
     margin-left: 1rem;
+    .logo{
+      display:grid ;
+      grid-template-columns:40% 60% ;
+      align-items:center ;
+      img{
+       margin-right:1rem ;
+      }
+      
+    }
     .refresh {
       background-color: #997af0;
       position: relative;
@@ -174,10 +189,22 @@ const Container = styled.div`
   }
   @media screen and (max-device-width: 1080px) {
     grid-template-rows: 10% 75% 15%;
+    padding: 0.4rem;
     .brand {
       gap: 0.3rem;
-      font-size: 0.6rem;
+      font-size: 0.7rem;
       margin-left: 0rem;
+      display:grid ;
+      grid-template-rows:40% 60% ;
+      .logo{
+         margin-top:1rem ;
+        align-items:center ;
+      }
+      .load{
+        margin:1rem ;
+        margin-bottom:1.5rem ;
+        align-items:center ;
+      }
       .refresh {
         position: relative;
         left: 0px;
@@ -190,14 +217,7 @@ const Container = styled.div`
     }
     .contacts {
       gap: 0.5rem;
-      &::-webkit-scrollbar {
-        width: 0.1rem;
-        &-thumb {
-          background-color: #ffffff39;
-          width: 0.1rem;
-          border-radius: 1rem;
-        }
-      }
+      
       .contact {
         min-height: 2rem;
         width: 80%;
@@ -208,12 +228,12 @@ const Container = styled.div`
 
         .avatar {
           img {
-            height: 1rem;
+            height: 1.2rem;
           }
         }
         .username {
           h3 {
-            font-size: 0.5rem;
+            font-size: 0.6rem;
           }
         }
       }
@@ -221,14 +241,21 @@ const Container = styled.div`
     .current-user {
     border-radius: 1rem;
     margin-top: 0.5rem;
+    display:grid ;
+
+    justify-content:center ;
+    align-items:center ;
     .avatar {
+      display:flex ;
+      justify-content:center ;
       img {
         height: 2rem;
-        max-inline-size: 100%;
+        max-inline-size: 90%;
       }
     }
     .username {
       margin-left: 0.5rem;
+      margin-bottom:1rem ;
       h2 {
         font-size:1rem ;
       }

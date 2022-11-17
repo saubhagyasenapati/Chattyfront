@@ -30,8 +30,9 @@ span{
     color:#4e00ff
 }
 @media  screen and (max-device-width: 1080px){
+  padding:1rem ;
   img{
-    width:40% ;
+    width:100% ;
     height:40% ;
   }
   h1{

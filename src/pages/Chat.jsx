@@ -116,7 +116,7 @@ const Container = styled.div`
     display:grid ;
     .container{
       grid-template-columns: 30% 70%;
-      height: 80vh;
+      height: 70vh;
        width: 90vw;
     }  
     }
